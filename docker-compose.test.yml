@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  backend-tests:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.test
+    environment:
+      DB_HOST: db
+      DB_USER: masterfansuser
+      DB_PASS: masterfanspass
+      DB_NAME: masterfansdb
+      DB_PORT: 5432
+    depends_on:
+      - db
+    command: ["go", "test", "./..."]
+
+  db:
+    image: postgres:15.6
+    environment:
+      POSTGRES_USER: masterfansuser
+      POSTGRES_PASSWORD: masterfanspass
+      POSTGRES_DB: masterfansdb
+    volumes:
+      - postgres_test_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_test_data:
+
