@@ -2,14 +2,14 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: ./masterfans-ui
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "80:80"
 
   backend:
     build:
-      context: ./masterfans-backend
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
