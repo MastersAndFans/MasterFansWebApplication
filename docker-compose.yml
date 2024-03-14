@@ -19,6 +19,7 @@ services:
       DB_PASS: masterfanspass
       DB_NAME: masterfansdb
       DB_PORT: 5432
+      JWT_SECRET_KEY: "bXQ+QpRiJDI6LSZ+YsPzl8aZ2pZmr9L4hf8eXcRZ1sWx+7CpEmxl9RCC0b/Af6W+Rq9gXw=="
     depends_on:
       - db
 
