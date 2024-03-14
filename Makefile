@@ -1,5 +1,5 @@
 # Makefile for building and testing with Docker Compose
-.PHONY: build test clean
+.PHONY: build test clean-build clean-test
 
 # Default target executed when no arguments are given to make.
 default: build
@@ -23,4 +23,5 @@ clean-build:
 clean-test:
 	@echo "Cleaning up test environment..."
 	docker-compose -f docker-compose.test.yml down
+
 
