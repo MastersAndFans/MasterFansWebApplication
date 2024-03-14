@@ -14,8 +14,13 @@ test:
 	@echo "Running tests..."
 	docker-compose -f docker-compose.test.yml up --build --abort-on-container-exit
 
+# Target for tearing down the dev environment
+clean-build:
+	@echo "Cleaning up dev environment..."
+	docker-compose -f docker-compose.yml down
+
 # Target for tearing down the test environment
-clean:
+clean-test:
 	@echo "Cleaning up test environment..."
 	docker-compose -f docker-compose.test.yml down
 
